@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap">
+	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap">
+    <title>CONNECTING CABLES</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            font-family: Barlow;
+            box-sizing: border-boxs;
+        }
+        body
+        {
+            min-height: 100vh;
+            position: relative;
+            background-color: white;
+        }
+        header
+        {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 10px;
+            width: calc(100% - 10px);
+            min-height: 30px;
+            height: max-content;
+            position: fixed;
+            top: 0;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            box-shadow: 0px 10px 15px rgba(0,0,0,0.2);
+            z-index: 1;
+            /* background: linear-gradient(89.9deg, #45b474 .53%, #00afef 99.92%); */
+            background-color: #007bff;
+        }
+        nav 
+        {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            overflow-x: scroll;
+            padding: 5px;
+        }
+        nav::-webkit-scrollbar
+        {
+            display: none;
+        }
+        .navBut
+        {
+            padding: 5px;
+            text-decoration: none;
+            color: black;
+            white-space: nowrap;
+            transition: 1s;
+            font-weight: 500;
+            font-size: 17px;
+            color: white;
+            position: relative;
+        }
+        .navBut::after
+        {
+            content: ' ';
+            position: absolute;
+            height: 2px;
+            width: 0;
+            background-color: white;
+            bottom: 0;
+            left: 2px;
+            transition: 1s;
+        }
+        .navBut:hover::after
+        {
+            width: 100%;
+        }
+        main
+        {
+            min-height: 100vh;
+            width: 100%;
+            float: 1;
+            position: relative;
+            margin-top: 66px;
+        }
+        .tigerWorld
+        {
+                position: relative;
+        }
+        .mainWorlda, .mainWorldb
+        {
+            display: flex;
+            gap: 10px;
+        }
+        .mainContainera
+        {
+            height: calc(100vh - 100px);
+            width: 50%;
+            position: relative;
+            padding: 10px;
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            gap: 10px;
+            flex-direction: column;
+        }
+        .mainH1
+        {
+            font-size: 60px;
+        }
+        .mainContainerb
+        {
+            width: 50%;
+            position: relative;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 10px;
+        }
+        .submainBoxa
+        {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .mainImg
+        {
+            height: 200px;
+            width: 200px;
+            gap: 10px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 1s;
+            flex: 100;
+        }
+        /* .mainImg:hover
+        {
+            transform: scale(1.1);
+            z-index: 1;
+        } */
+        footer
+        {
+            width: 100%;
+            background: linear-gradient(89.9deg, #45b474 .53%, #00afef 99.92%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+            top: 30px;
+        }
+        .footerWorlda
+        {
+            position: relative;
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+        }
+        .footerWorldb
+        {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+        }
+        .footerContainera
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 10px;
+        }
+        .inputBox
+        {
+            display: flex;
+            position: relative;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .inputEmail
+        {
+            padding: 8px 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            flex: 1;
+        }
+        .sendEmail
+        {
+            padding: 8px 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 18px;
+            background-color: white;
+            cursor: pointer;
+        }
+        .footerBxoa
+        {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footerIco
+        {
+            text-decoration: none;
+        }
+        .footerContainerb
+        {
+            display: flex;
+            gap: 20px;
+            position: relative;
+            padding: 10px;
+        }
+        .footerBoxb
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+        }
+        .navBox
+        {
+            position: relative;
+            height: max-content;
+        }
+        .videoBox
+        {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            height: 200px;
+            cursor: pointer;
+        }
+        .video
+        {
+            height: 300px;
+            width: 300px;
+            border-radius: 5px;
+            position: relative;
+        }
+        .videoTitle
+        {
+            position: absolute;
+            bottom: -15px;
+            color: white;
+            background-color: transparent;
+            backdrop-filter: blur(15px);
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            font-size: 30px;
+            padding: 5px;
+            transition: 1s;
+            text-decoration: none;
+        }
+        .videoBox:hover .videoTitle
+        {
+            text-decoration: underline;
+        }
+        .awardContainer
+        {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .scroll-box {
+            width: 100%;
+           overflow-x: scroll;
+        }
+        .scroll-box::-webkit-scrollbar{
+            display: none;
+        }
+/* .scroll-box::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-box::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.scroll-box::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} */
+
+        .content {
+            display: flex;
+            gap: 10px;
+        }
+
+        .item {
+            width: 300px;
+            height: 200px;
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        .catagoryContainer
+        {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+        }
+        .catagoryBox
+        {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 10px;
+            position: relative;
+            padding: 5px;
+        }
+        .catagoryminBoxa
+        {
+            height: max-content;
+            width: max-content;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background-repeat: no-repeat;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            transition: 1s;
+        }
+        .catagoryImg
+        {
+            object-fit: contain;
+            height: 100%;
+            width: 100%;
+        }
+        .catagoryDis
+        {
+            position: absolute;
+            bottom: -80px;
+            padding: 5px;
+            background-color: transparent;
+            backdrop-filter: blur(15px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: 2s;
+        }
+        @media (max-width: 875px) {
+            .tigerWorld
+            {
+                position: relative;
+                top: 30px;
+            }
+        }
+        @media (max-width: 770px) {
+            .tigerWorld
+            {
+                position: relative;            
+                top: 30px;
+            }
+            .mainWorlda 
+            {
+                display: flex;
+                flex-direction: column;
+            }
+            .mainContainera, .mainContainerb
+            {
+                width: calc(100% - 20px);
+                height: 50%;
+            }
+            .mainWorldb
+            {
+                flex-direction: column-reverse;
+            }
+            .footerWorlda
+            {
+                flex-direction: column;
+            }
+            .footerContainerb
+            {
+                flex-direction: column;
+            }
+            .footerBoxb
+            {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+            .video
+            {
+                width: 100%;
+                height: 100%;
+            }
+            .videoTitle
+            {
+                position: absolute;
+            bottom: 0;
+            color: white;
+            background-color: transparent;
+            backdrop-filter: blur(15px);
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            font-size: 30px;
+            padding: 5px;
+            }
+            .catagoryBox
+            {
+                flex-direction: column;
+            }
+            .catagoryminBoxa, .catagoryminBoxb, .catagoryminBoxc
+            {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: white;">Connecting Cables</h1>
+        <nav>
+            <div class="navBox">
+                 <a href="" class="navBut">Home</a>
+            </div>
+            <div class="navBox">
+                <a href="" class="navBut">About</a>
+            </div>
+            <div class="navBox">
+                <a href="" class="navBut">Contact Us</a>
+            </div>
+            <div class="navBox">
+                <a href="" class="navBut">Services</a>
+            </div>
+            <div class="navBox">
+                <a href="" class="navBut">Product</a>
+            </div>
+            <div class="navBox">
+                <a href="" class="navBut">Management Team</a>
+            </div>
+            <div class="navBox">
+                <a href="" class="navBut">Gallery</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="tigerWorld">
+            <div class="mainWorlda">
+                <div class="mainContainera">
+                    <h1 class="mainH1">Welcome to Connecting Cables</h1>
+                    <h2>We have been in the wiring harness space for over three years.</h2>
+                    <p style="font-size: 18px;">
+                        We have been in the wiring harness space for over three years.
+                        We started with TML Indica & CV wiring harness as a job work with TATA YAZAKI and have been appreciated by them. The credentials can be seen below.</p>
+                </div>
+                <div class="mainContainerb">
+                    <div class="submainBoxa">
+                    <img src="picture/imga.jpg" alt="img" class="mainImg">
+                    <img src="picture/imgb.png" alt="img" class="mainImg">
+                    <img src="picture/imgc.jpg" alt="img" class="mainImg">
+                    <img src="picture/imgd.jpg" alt="img" class="mainImg">
+                    </div>
+                </div>
+            </div>
+            <div class="mainWorldb">
+                <div class="mainContainerb">
+                    <div class="submainBoxa">
+                        <img src="picture/imge.jpg" alt="img" class="mainImg">
+                        <img src="picture/imgf.jpg" alt="img" class="mainImg">
+                        <img src="picture/imgg.jpg" alt="img" class="mainImg">
+                        <img src="picture/imgh.jpg" alt="img" class="mainImg">
+                        <!-- <img src="picture/imgi.jpg" alt="img" class="mainImg">
+                        <img src="picture/imgj.jpg" alt="img" class="mainImg"> -->
+                    </div>
+                </div>
+                <div class="mainContainera">
+                    <p style="font-size: 18px;">Currently we are assembling wiring harness for TATA YAZAKI NANO CAR as is clear from the photo gallery .<br><br>An ISO certified company ,we are a focused and progressive organization providing our customers with delight based on quality and timely delivery.<br><br>We have our exclusive premises in GIDC Gandhinagar, Capital of Gujarat with its excellent road and rail network, an excellent logistics support as well as adequate space for storage of items before and after assembly.<br><br>As a progressive company we target, in the future, wiring harnesses of entire cross section of vehicles both passenger cars as well as commercial vehicles .<br><br>Also wiring harnesses for white goods, medical diagnostics equipment, Electrical and electronics equipment.</p>
+                </div>
+            </div>
+            <div class="catagoryContainer">
+                <h2 style="margin-left: 10px;">Catagory</h2>
+                <div class="catagoryBox">
+                    <div class="catagoryminBoxa">
+                        <img src="picture/imgj.jpg" class="catagoryImg" alt="catagoryImg">
+                        <h2 style="position: absolute;z-index: 1;">PINS</h2>
+                    </div>
+                    <div class="catagoryminBoxa">
+                        <img src="picture/imgi.jpg" class="catagoryImg" alt="catagoryImg">
+                        <h2 style="position: absolute;z-index: 1;">BATTERY CABLES</h2>
+                    </div>
+                    <div class="catagoryminBoxa">
+                        <img src="picture/imgj.jpg" class="catagoryImg" alt="catagoryImg">
+                        <h2 style="position: absolute;z-index: 1;">HARDNESS</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="awardContainer">
+                <h2>Awards</h2>
+                <div class="scroll-box">
+                    <div class="content">
+                        <div class="item">Item 1</div>
+                        <div class="item">Item 2</div>
+                        <div class="item">Item 3</div>
+                        <div class="item">Item 4</div>
+                        <div class="item">Item 5</div>
+                        <div class="item">Item 6</div>
+                      </div>
+                 </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footerWorlda">
+            <div class="footerContainera">
+                <h1>Connecting Cables</h1>
+                <form class="inputBox">
+                    <input type="email" class="inputEmail" required>
+                    <button type="submit" class="sendEmail">Send</button>
+                </form>
+                <div class="footerBxoa">
+                      <a href="https://facebook.com/SyskaWorld" class="footerIco">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M22.5 12.0613C22.5 6.26003 17.8013 1.56128 12 1.56128C6.19875 1.56128 1.5 6.26003 1.5 12.0613C1.5 17.3025 5.34125 21.6425 10.355 22.43V15.0888H7.695V12.0613H10.3638V9.75128C10.3638 7.11753 11.93 5.66503 14.3275 5.66503C15.4738 5.66503 16.6813 5.86628 16.6813 5.86628V8.44753H15.36C14.0563 8.44753 13.645 9.26128 13.645 10.0838V12.0613H16.5587L16.095 15.0975H13.645V22.4388C18.6588 21.6425 22.5 17.3025 22.5 12.0613Z" fill="white"></path>
+                        </svg>
+                      </a>
+                      <a href="https://twitter.com/SyskaWorld" class="footerIco">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M20.6891 7.5499C20.7025 7.7424 20.7025 7.9349 20.7025 8.12917C20.7025 14.0488 16.196 20.8759 7.95576 20.8759V20.8723C5.52157 20.8759 3.13794 20.1786 1.08875 18.8639C1.4427 18.9065 1.79842 18.9278 2.15504 18.9287C4.17229 18.9305 6.13189 18.2536 7.71891 17.0072C5.80189 16.9709 4.12084 15.721 3.53358 13.8962C4.20512 14.0257 4.89705 13.9991 5.55616 13.819C3.46616 13.3968 1.96254 11.5605 1.96254 9.42788C1.96254 9.40837 1.96254 9.38974 1.96254 9.37111C2.58528 9.71796 3.28254 9.91047 3.99576 9.93176C2.02729 8.61619 1.42052 5.99748 2.60923 3.95006C4.88374 6.74885 8.23963 8.4503 11.8421 8.63038C11.4811 7.07442 11.9743 5.44393 13.1382 4.35014C14.9425 2.65401 17.7804 2.74095 19.4765 4.54442C20.4798 4.34659 21.4414 3.97845 22.3214 3.45684C21.987 4.49385 21.2871 5.37474 20.3521 5.9345C21.24 5.82982 22.1076 5.59208 22.9246 5.22925C22.3232 6.13055 21.5656 6.91563 20.6891 7.5499Z" fill="white"></path>
+                        </svg>
+                      </a>
+                      <a href="https://instagram.com/syska.world" class="footerIco">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M7 2H17C19.7614 2 22 4.23858 22 7V17C22 19.7614 19.7614 22 17 22H7C4.23858 22 2 19.7614 2 17V7C2 4.23858 4.23858 2 7 2ZM16.65 6.49999C16.65 6.03055 17.0306 5.64999 17.5 5.64999H17.51C17.9795 5.64999 18.36 6.03055 18.36 6.49999C18.36 6.96944 17.9795 7.34999 17.51 7.34999H17.5C17.0306 7.34999 16.65 6.96944 16.65 6.49999ZM12.5127 8.79134C11.8469 8.69261 11.1669 8.80633 10.5695 9.11633C9.97203 9.42633 9.48755 9.91682 9.18494 10.518C8.88233 11.1193 8.777 11.8006 8.88393 12.4651C8.99086 13.1296 9.30461 13.7435 9.78055 14.2195C10.2565 14.6954 10.8704 15.0092 11.5349 15.1161C12.1994 15.223 12.8808 15.1177 13.482 14.8151C14.0832 14.5125 14.5737 14.028 14.8837 13.4306C15.1937 12.8331 15.3074 12.1531 15.2087 11.4873C15.108 10.8082 14.7915 10.1795 14.306 9.69399C13.8206 9.20851 13.1918 8.89205 12.5127 8.79134ZM9.83255 7.69614C10.7287 7.23114 11.7487 7.06055 12.7474 7.20865C13.7661 7.35971 14.7092 7.8344 15.4374 8.56262C16.1656 9.29083 16.6403 10.2339 16.7914 11.2526C16.9395 12.2513 16.7689 13.2713 16.3039 14.1675C15.8389 15.0636 15.1031 15.7903 14.2013 16.2443C13.2995 16.6982 12.2775 16.8562 11.2807 16.6958C10.2839 16.5354 9.36308 16.0647 8.64918 15.3508C7.93527 14.6369 7.46465 13.7161 7.30425 12.7193C7.14386 11.7225 7.30185 10.7005 7.75576 9.7987C8.20968 8.89687 8.9364 8.16114 9.83255 7.69614Z" fill="white"></path>
+                        </svg>
+                      </a>
+                      <a href="https://linkedin.com/company/syskaworld/" class="footerIco">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_1110_1425)">
+                          <path d="M20.1909 2H3.80909C2.80909 2 2 2.80909 2 3.80909V20.1909C2 21.1909 2.80909 22 3.80909 22H20.1909C21.1909 22 22 21.1909 22 20.1909V3.80909C22 2.80909 21.1909 2 20.1909 2ZM8.19091 19.2727C8.19091 19.5636 7.95455 19.8 7.66364 19.8H5.41818C5.12727 19.8 4.89091 19.5636 4.89091 19.2727V9.87273C4.89091 9.58182 5.12727 9.34545 5.41818 9.34545H7.66364C7.95455 9.34545 8.19091 9.58182 8.19091 9.87273V19.2727ZM6.54545 8.46364C5.37273 8.46364 4.41818 7.50909 4.41818 6.33636C4.41818 5.16364 5.36364 4.2 6.54545 4.2C7.72727 4.2 8.67273 5.15455 8.67273 6.32727C8.67273 7.5 7.71818 8.46364 6.54545 8.46364ZM19.9 19.3091C19.9 19.5727 19.6818 19.7909 19.4182 19.7909H17.0091C16.7455 19.7909 16.5273 19.5727 16.5273 19.3091V14.9091C16.5273 14.2545 16.7182 12.0273 14.8091 12.0273C13.3273 12.0273 13.0273 13.5455 12.9636 14.2364V19.3182C12.9636 19.5818 12.7455 19.8 12.4818 19.8H10.1545C9.89091 19.8 9.67273 19.5818 9.67273 19.3182V9.83636C9.67273 9.57273 9.89091 9.35455 10.1545 9.35455H12.4818C12.7455 9.35455 12.9636 9.57273 12.9636 9.83636V10.6545C13.5091 9.82727 14.3273 9.19091 16.0727 9.19091C19.9273 9.19091 19.9 12.7909 19.9 14.7636V19.3091Z" fill="white"></path>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_1110_1425">
+                          <rect width="20" height="20" fill="white" transform="translate(2 2)"></rect>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </a>
+                      <a href="https://youtube.com/channel/UCkZXh-_kU_2FU2r8RzhWZRg/featured" class="footerIco">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M21.8387 5.42943C22.1794 5.78059 22.4213 6.21543 22.5401 6.69002C22.8573 8.44872 23.0113 10.233 23.0001 12.02C23.0064 13.7804 22.8524 15.5376 22.5401 17.27C22.4213 17.7446 22.1794 18.1794 21.8387 18.5306C21.4981 18.8818 21.0708 19.1368 20.6001 19.27C18.8801 19.73 12.0001 19.73 12.0001 19.73C12.0001 19.73 5.12008 19.73 3.40008 19.27C2.9389 19.1438 2.51806 18.9008 2.17823 18.5645C1.83839 18.2282 1.59104 17.8099 1.46008 17.35C1.14285 15.5913 0.988863 13.8071 1.00008 12.02C0.991319 10.2463 1.1453 8.47557 1.46008 6.73002C1.57887 6.25543 1.8208 5.82059 2.16143 5.46943C2.50206 5.11826 2.92933 4.8632 3.40008 4.73002C5.12008 4.27002 12.0001 4.27002 12.0001 4.27002C12.0001 4.27002 18.8801 4.27002 20.6001 4.69002C21.0708 4.8232 21.4981 5.07826 21.8387 5.42943ZM9.74347 15.4559C9.4102 15.6416 9.00012 15.4006 9.00012 15.0191V8.92096C9.00012 8.53945 9.4102 8.29849 9.74347 8.48418L15.2162 11.5332C15.5583 11.7239 15.5583 12.2162 15.2162 12.4068L9.74347 15.4559Z" fill="white"></path>
+                        </svg>
+                      </a>
+                  </div>
+            </div>
+            <div class="footerContainerb">
+                <div class="footerBoxb">
+                    <div class="navBox">
+                        <a href="" class="navBut">Home</a>
+                    </div>
+                    <div class="navBox">
+                       <a href="" class="navBut">About</a>
+                    </div>
+                    <div class="navBox">
+                       <a href="" class="navBut">Contact Us</a>
+                    </div>
+                    <div class="navBox">
+                       <a href="" class="navBut">Services</a>
+                    </div>
+                    <div class="navBox">
+                       <a href="" class="navBut">Product</a>
+                    </div>
+                    <div class="navBox">
+                       <a href="" class="navBut">Management Team</a>
+                    </div>
+                    <div class="navBox">
+                       <a href="" class="navBut">Gallery</a>
+                    </div>
+                </div>
+                <div class="footerBoxb">
+                    <div class="videoBox">
+                        <video class="video" autoplay loop muted>
+                            <source src="newmapgif.mp4" type="video/mp4">
+                        </video>
+                        <a href="" class="videoTitle">Gandhinagar, Gujarat, India</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footerWorldb">
+            <p style="padding: 10px;color: white;">(C) Copyrites www.connectcables.co.in | info@connectcables.co.in
+                All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+<!-- (C) Copyrites www.connectcables.co.in | info@connectcables.co.in
+All rights reserved. -->
