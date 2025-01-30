@@ -7,6 +7,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap">
 	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <title>CONNECTING CABLES</title>
     <style>
         *
@@ -37,7 +39,7 @@
             border-bottom-right-radius: 20px;
             border-bottom-left-radius: 20px;
             box-shadow: 0px 10px 15px rgba(0,0,0,0.2);
-            z-index: 2;
+            z-index: 1;
             /* background: linear-gradient(89.9deg, #45b474 .53%, #00afef 99.92%); */
             background-color: #007bff;
         }
@@ -282,24 +284,10 @@
         .scroll-box::-webkit-scrollbar{
             display: none;
         }
-/* .scroll-box::-webkit-scrollbar {
-  height: 8px;
-}
-
-.scroll-box::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
-}
-
-.scroll-box::-webkit-scrollbar-thumb:hover {
-  background: #555;
-} */
-
         .content {
             display: flex;
             gap: 10px;
         }
-
         .item {
             width: 300px;
             height: 200px;
@@ -363,6 +351,66 @@
             text-align: center;
             transition: 2s;
         }
+        .contactusContainer
+        {
+            padding: 10px;
+            color: white;
+            border-radius: 5px;
+            position: fixed;
+            bottom: 20px;
+            right: 10px;
+            z-index: 1;
+            height: max-content;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .contactusBox
+        {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            align-items: center;
+            justify-content: end;
+            gap: 10px;
+        }
+        .contactItem
+        {
+            border-radius: 5px;
+            width: 40px;
+            height: 40px;
+            color: white;
+            background-color: #007bff;
+            box-shadow: 0px 0px 15px #007bff;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            cursor: pointer;
+        }
+        .contactBut
+        {
+            border-radius: 5px;
+            width: 40px;
+            height: 40px;
+            color: white;
+            background-color: #007bff;
+            box-shadow: 0px 0px 15px #007bff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            cursor: pointer;
+        }
+        .contactBut ion-icon {
+    cursor: pointer; /* Pointer cursor for the button */
+    font-size: 24px; /* Adjust size as needed */
+}
         @media (max-width: 875px) {
             .tigerWorld
             {
@@ -523,6 +571,14 @@
                       </div>
                  </div>
             </div>
+            <div class="contactusContainer">
+                <div class="contactusBox">
+                    <a href="https://wa.me/+919510954023" class="contactItem"><ion-icon name="logo-whatsapp"></ion-icon></a>
+                    <a href="mailto:example@gmail.com" class="contactItem"><ion-icon name="mail-outline"></ion-icon></a>
+                    <a href="tel:+919510954023" class="contactItem"><ion-icon name="call-outline"></ion-icon></a>
+                </div>
+                <p class="contactBut" onclick="toggleCon()"><ion-icon name="chatbubbles-outline"></ion-icon></p>
+            </div>
         </div>
     </main>
     <footer>
@@ -607,7 +663,37 @@
                 All rights reserved.</p>
         </div>
     </footer>
+    <script>
+       function toggleCon() {
+    var contactItems = document.querySelectorAll('.contactItem');
+    var buttonIcon = document.querySelector('.contactBut ion-icon'); // Select the button's icon
+    var isVisible = contactItems[0].style.display === 'flex'; // Check visibility based on the first item
+
+    if (isVisible) {
+        // Hide the items
+        contactItems.forEach(function (item) {
+            item.style.transition = 'opacity 0.5s ease-in-out'; // Smooth fade-out animation
+            item.style.opacity = '0'; // Fade out
+            setTimeout(() => {
+                item.style.display = 'none'; // Hide after animation
+            }, 500); // Match the transition duration
+        });
+        // Change the icon to "chat bubble"
+        buttonIcon.setAttribute('name', 'chatbubbles-outline');
+    } else {
+        // Show the items
+        contactItems.forEach(function (item) {
+            item.style.display = 'flex'; // Make visible
+            item.style.opacity = '0'; // Start invisible
+            setTimeout(() => {
+                item.style.transition = 'opacity 0.5s ease-in-out'; // Smooth fade-in animation
+                item.style.opacity = '1'; // Fade in
+            }, 0);
+        });
+        // Change the icon to "close"
+        buttonIcon.setAttribute('name', 'close-outline');
+    }
+}
+    </script>
 </body>
 </html>
-<!-- (C) Copyrites www.connectcables.co.in | info@connectcables.co.in
-All rights reserved. -->
