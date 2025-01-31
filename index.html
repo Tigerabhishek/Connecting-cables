@@ -86,8 +86,8 @@
         main
         {
             min-height: 100vh;
-     /* Adjust width for padding and margin */
-    padding: 10px;
+    width: calc(100% - 40px); /* Adjust width for padding and margin */
+    padding: 20px;
     margin: 10px auto;
     position: relative;
     margin-top: 66px;
@@ -147,8 +147,8 @@
         }
         footer
         {
-             /* Adjust width for padding and margin */
-    padding: 10px;
+            width: calc(100% - 40px); /* Adjust width for padding and margin */
+    padding: 20px;
     margin: 10px auto;
     background: linear-gradient(89.9deg, #45b474 .53%, #00afef 99.92%);
     display: flex;
@@ -321,10 +321,8 @@
         }
         .catagoryminBoxa
         {
-            height: max-content;
+            height: 300px;
             width: max-content;
-            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
-            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -340,6 +338,8 @@
             object-fit: contain;
             height: 100%;
             width: 100%;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+            border-radius: 10px;
         }
         .catagoryDis
         {
@@ -353,6 +353,8 @@
             justify-content: center;
             text-align: center;
             transition: 2s;
+            text-decoration: none;
+            color: white;
         }
         .contactusContainer
         {
@@ -504,7 +506,7 @@
                 <a href="" class="navBut">Image Gallery</a>
 	        </div>
             <div class="navBox">
-                <a href="" class="navBut">Management Team</a>
+                <a href="management.html" class="navBut">Management Team</a>
             </div>
         </nav>
     </header>
@@ -545,20 +547,20 @@
                 <div class="catagoryBox">
                     <div class="catagoryminBoxa">
                         <img src="picture/imgj.jpg" class="catagoryImg" alt="catagoryImg">
-                        <h2 style="position: absolute;z-index: 1;">PINS</h2>
+                        <a href="pin.html" style="position: absolute;z-index: 1;text-decoration: none;color: white;">PINS</a>
                     </div>
                     <div class="catagoryminBoxa">
                         <img src="picture/imgi.jpg" class="catagoryImg" alt="catagoryImg">
-                        <h2 style="position: absolute;z-index: 1;">BATTERY CABLES</h2>
+                        <a href="batterycable.html" style="position: absolute;z-index: 1;text-decoration: none;color: white;">BATTERY CABLES</a>
                     </div>
                     <div class="catagoryminBoxa">
                         <img src="picture/imgj.jpg" class="catagoryImg" alt="catagoryImg">
-                        <h2 style="position: absolute;z-index: 1;">HARDNESS</h2>
+                        <a href="hardness.html" style="position: absolute;z-index: 1;text-decoration: none;color: white;">HARDNESS</a>
                     </div>
                 </div>
             </div>
             <div class="awardContainer">
-                <h2 style="margin-left: 10px;">Awards</h2>
+                <h2>Awards</h2>
                 <div class="scroll-box">
                     <div class="content">
                         <div class="item">
@@ -649,7 +651,7 @@
                         <a href="" class="navBut">Image Gallery</a>
                     </div>
                     <div class="navBox">
-                       <a href="" class="navBut">Management Team</a>
+                       <a href="management.html" class="navBut">Management Team</a>
                     </div>
                 </div>
                 <div class="footerBoxb">
