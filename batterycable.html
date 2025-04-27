@@ -14,12 +14,12 @@
     <meta name="keywords" content="connecting cables, wiring harness, pins, battery cable, harness">
     <meta name="author" content="Mr.Nitin Waghole">
     <link rel="icon" type="image/x-icon" href="picture/favicon.ico">
-    <meta property="og:title" content="Battery Cables - CONNECTING CABLES">
+    <meta property="og:title" content="Harness- CONNECTING CABLES">
     <meta property="og:description" content="Welcome to Connecting CablesWe have been in the wiring harness space for over three years.
     We have been in the wiring harness space for over three years. We started with TML Indica & CV wiring harness as a job work with TATA YAZAKI and have been appreciated by them. The credentials can be seen below.">
     <meta property="og:image" content="picture/cablelogo2.png">
-    <meta property="og:url" content="https://tigerabhishek.github.io/Connecting-cables/batterycable.html">
-    <title>Battery Cables - CONNECTING CABLES</title>
+    <meta property="og:url" content="https://tigerabhishek.github.io/Connecting-cables/hardness.html">
+    <title>Battery Cable CONNECT CABLES</title>
     <style>
         *
         {
@@ -159,10 +159,10 @@
         footer
         {
             width: calc(100% - 40px); /* Reduce width to avoid touching edges */
-    padding: 20px; /* Add internal spacing */ /* Add external spacing */
+    padding: 20px; /* Add internal spacing */
+    margin: 20px auto; /* Add external spacing */
     background: linear-gradient(89.9deg, #45b474 0.53%, #00afef 99.92%);
-    border-top-left-radius: 10px; /* Optional: Smoothen edges */
-    border-top-right-radius: 10px; /* Optional: Smoothen edges */
+    border-radius: 10px; /* Optional: Smoothen edges */
         }
         .footerWorlda
         {
@@ -293,30 +293,18 @@
             margin: 10px auto; /* Add space outside the main content */
             width: calc(100% - 40px); /* Account for padding and margin */
         }
-        .containera
+        .productContainer
         {
-            width: 100%;
-            height: max-content;
             display: flex;
             flex-wrap: wrap;
-            justify-content:space-evenly;
-            padding: 5px;
+            align-items: start;
+            justify-content: space-evenly;
             gap: 10px;
         }
-        .containerb
-        {
-            width: 50%;
-            height: 100vh;
-            background-color: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 5px;
-        }
-        .boxContainer
+        .imgBox
         {
             height: fit-content;
-            width: 274px;
+            width: 210px;
             background-color: rgba(225,225,225,0.2);
             border-radius: 5px;
             box-shadow: 0px 2px 15px rgba(0,0,0,0.5);
@@ -327,25 +315,76 @@
             position: relative;
             padding: 5px;
         }
-        .boxContainerb
-        {
-            height: 250px;
-            width: 550px;
-            background-color: rgba(225,225,225,0.2);
-            border-radius: 5px;
-            box-shadow: 0px 2px 15px rgba(0,0,0,0.5);
-            display: flex;
-            align-items: start;
-            position: relative;
-            color: white;
-            padding: 5px;
-        }
-        img
+        .img
         {
             height: 250px;
             width: 200px;
-            object-fit: inherit;
+            object-fit: contain;
             border-radius: 5px;
+        }
+        .catagoryBox
+        {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 10px;
+            position: relative;
+            margin-top: 10px;
+            padding: 5px;
+        }
+        .catagoryminBoxa
+        {
+            width: max-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background-repeat: no-repeat;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            transition: 1s;
+        }
+        .catagoryImg
+        {
+            object-fit: contain;
+            height: 200px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+        .productBox
+        {
+            display: none;
+            align-items: center;
+            gap: 10px;
+        }
+        .pinBut
+        {
+            padding: 5px;
+            text-decoration: none;
+            color: black;
+            white-space: nowrap;
+            transition: 1s;
+            font-weight: 500;
+            font-size: 17px;
+            color: white;
+            position: relative;
+            text-decoration: none;
+        }
+        .pinBut::after
+        {
+            content: ' ';
+            position: absolute;
+            height: 2px;
+            width: 0;
+            background-color: white;
+            bottom: 0;
+            left: 2px;
+            transition: 1s;
+        }
+        .pinBut:hover::after
+        {
+            width: 100%;
         }
         .box 
         {
@@ -389,72 +428,8 @@
             color: royalblue;
             background-color: transparent;
         }
-        .catagoryBox
-        {
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            gap: 10px;
-            position: relative;
-            padding: 5px;
-        }
-        .catagoryminBoxa
-        {
-            height: 300px;
-            width: max-content;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            background-repeat: no-repeat;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            transition: 1s;
-        }
-        .catagoryImg
-        {
-            object-fit: contain;
-            width: 100%;
-            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
-            border-radius: 10px;
-        }
-        .productBox
-        {
-            display: none;
-            align-items: center;
-            gap: 10px;
-        }
-        .pinBut
-        {
-            padding: 5px;
-            text-decoration: none;
-            color: black;
-            white-space: nowrap;
-            transition: 1s;
-            font-weight: 500;
-            font-size: 17px;
-            color: white;
-            position: relative;
-            text-decoration: none;
-        }
-        .pinBut::after
-        {
-            content: ' ';
-            position: absolute;
-            height: 2px;
-            width: 0;
-            background-color: white;
-            bottom: 0;
-            left: 2px;
-            transition: 1s;
-        }
-        .pinBut:hover::after
-        {
-            width: 100%;
-        }
         @media (max-width: 1119px) {
-            .boxContainer {
+            .imgBox {
     height: auto;
     width: 266px;
     background-color: rgba(225, 225, 225, 0.2);
@@ -551,33 +526,6 @@
                 height: max-content;
             }
         }
-        @media (max-width: 551px) {
-            .worldContaienr
-            {
-                height: auto;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-            .containera, .containerb 
-            {
-                width: 100%;
-            }
-            .boxContainer, .boxContainerb
-            {
-                height: auto;
-                width: 100%;
-                min-width: 250px;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-            img 
-            {
-                height: auto;
-                width: 100%;
-            }
-        }
     </style>
 </head>
 <body>
@@ -591,7 +539,7 @@
     </div>
     <div class="mainWorld" id="mainworld">
         <header>
-            <h2 style="color: white;">Connecting Cables</h2>
+            <h1 style="color: white;">Connecting Cables</h1>
             <nav>
                 <div class="navBox">
                      <a href="index.html" class="navBut">Home</a>
@@ -617,171 +565,163 @@
         </header>
         <div class="world">
             <main>
-                <h2>BATTER CABLES</h2>
-                <div class="containera">
-                    <div class="boxContainer">
-                        <img src="picture/product/page1/wirec.png" alt="wa.jpg" srcset="" loading="lazy">
+                <h2>Battery Cable</h2>
+                <div class="productContainer">
+                    <div class="imgBox">
+                        <img class="img" src="picture/product/page1/wirec.png" alt="wa.jpg" srcset="" loading="lazy">
                         <div class="box">
                             <h2>Battery Cable</h2>
                             <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
                             <div class="mineBox">
-                                
-                                <button id="ConsultBut" onclick="openform('Product 4')">Consult</button>
+                                <a href="form.html" style="text-decoration: none;"  id="ConsultBut" onclick="openform('Product 4')">Consult</a>
                             </div>
                         </div>
                     </div>
-                    <div class="boxContainer">
-                        <img src="picture/product/page1/wireb.png" alt="wa.jpg" srcset="" loading="lazy">
+                    <div class="imgBox">
+                        <img class="img" src="picture/product/page1/wireb.png" alt="wa.jpg" srcset="" loading="lazy">
                         <div class="box">
                             <h2>70sqmm LINK CABLE:</h2>
                             <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
                             <div class="mineBox">
-                                
-                                <button id="ConsultBut" onclick="openform('Product 4')">Consult</button>
+                                <a href="form.html" style="text-decoration: none;"  id="ConsultBut" onclick="openform('Product 4')">Consult</a>
                             </div>
                         </div>
                     </div>
-                    <div class="boxContainer">
-                        <img src="picture/product/page1/wireh.png" alt="picture/product/page1/wireh.png" srcset="">
+                    <div class="imgBox">
+                        <img class="img" src="picture/product/page1/wireh.png" alt="picture/product/page1/wireh.png" srcset="">
                         <div class="box">
                             <h2>DUAL BATTERY CABLE:</h2>
                             <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
                             <div class="mineBox">
-                                
-                                <button id="ConsultBut" onclick="openform('Product 4')">Consult</button>
+                                <a href="form.html" style="text-decoration: none;"  id="ConsultBut" onclick="openform('Product 4')">Consult</a>
                             </div>
                         </div>
                     </div>
-                    <div class="boxContainer">
-                        <img src="picture/product/pag2/wirej.png" alt="wa.jpg" srcset="">
+                    <div class="imgBox">
+                        <img class="img" src="picture/product/pag2/wirej.png" alt="wa.jpg" srcset="">
                         <div class="box">
                             <h2>DUAL BATTERY CABLE (+,-):</h2>
                             <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
                             <div class="mineBox">
-                                
-                                <button id="ConsultBut" onclick="openform('Product 4')">Consult</button>
+                                <a href="form.html" style="text-decoration: none;"  id="ConsultBut" onclick="openform('Product 4')">Consult</a>
                             </div>
                         </div>
                     </div>
-                    <div class="boxContainer">
-                        <img src="picture/product/page1/wired.png" alt="wa.jpg" srcset="">
+                    <div class="imgBox">
+                        <img class="img" src="picture/product/page1/wired.png" alt="wa.jpg" srcset="">
                         <div class="box">
                             <h2>4-CORE SHIELDED:</h2>
                             <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
                             <div class="mineBox">
-                                
-                                <button id="ConsultBut" onclick="openform('Product 4')">Consult</button>
+                                <a href="form.html" style="text-decoration: none;"  id="ConsultBut" onclick="openform('Product 4')">Consult</a>
                             </div>
                         </div>
                     </div>
-                    <div class="boxContainer">
-                        <img src="picture/product/page4/wireq.png" alt="wa.jpg" srcset="">
+                    <div class="imgBox">
+                        <img class="img" src="picture/product/page4/wireq.png" alt="wa.jpg" srcset="">
                         <div class="box">
                             <h2>70sqmm BATTERY CABLE WITH COT (+,-):</h2>
                             <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
                             <div class="mineBox">
-                                
-                                <button id="ConsultBut" onclick="openform('Product 4')">Consult</button>
+                                <a href="form.html" style="text-decoration: none;"  id="ConsultBut" onclick="openform('Product 4')">Consult</a>
                             </div>
                         </div>
                     </div>
-                    <div class="boxContainer">
-                        <img src="picture/product/pag2/wirei.png" alt="wa.jpg" srcset="">
+                    <div class="imgBox">
+                        <img class="img" src="picture/product/pag2/wirei.png" alt="wa.jpg" srcset="">
                         <div class="box">
                             <h2>95sqmm BATTERY CABLE:</h2>
                             <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
                             <div class="mineBox">
-                                
-                                <button id="ConsultBut" onclick="openform('Product 4')">Consult</button>
+                                <a href="form.html" style="text-decoration: none;"  id="ConsultBut" onclick="openform('Product 4')">Consult</a>
                             </div>
                         </div>
                     </div>
-                    <div class="boxContainer">
-                        <img src="picture/product/page4/wiret.png" alt="wa.jpg" srcset="">
+                    <div class="imgBox">
+                        <img class="img" src="picture/product/page4/wiret.png" alt="wa.jpg" srcset="">
                         <div class="box">
                             <h2>BATTERY CABLE WITH FUSE AND CONNECTOR:</h2>
                             <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
                             <div class="mineBox">
-                                
-                                <button id="ConsultBut" onclick="openform('Product 4')">Consult</button>
+                                <a href="form.html" style="text-decoration: none;"  id="ConsultBut" onclick="openform('Product 4')">Consult</a>
                             </div>
                         </div>
                     </div>
-                    <div class="boxContainer">
-                        <img src="picture/product/page4/wireu.png" alt="wa.jpg" srcset="">
+                    <div class="imgBox">
+                        <img class="img" src="picture/product/page4/wireu.png" alt="wa.jpg" srcset="">
                         <div class="box">
                             <h2>16sqmm CABLE (+,-):</h2>
                             <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
                             <div class="mineBox">
-                                
-                                <button id="ConsultBut" onclick="openform('Product 4')">Consult</button>
+                                <a href="form.html" style="text-decoration: none;"  id="ConsultBut" onclick="openform('Product 4')">Consult</a>
                             </div>
                         </div>
                     </div>
-                    <div class="boxContainer">
-                        <img src="picture/product/page4/wirer.png" alt="wa.jpg" srcset="">
+                    <div class="imgBox">
+                        <img class="img" src="picture/product/page4/wirer.png" alt="wa.jpg" srcset="">
                         <div class="box">
                             <h2>50sqmm CABLE (+,-):</h2>
                             <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
                             <div class="mineBox">
-                                
-                                <button id="ConsultBut" onclick="openform('Product 4')">Consult</button>
+                                <a href="form.html" style="text-decoration: none;"  id="ConsultBut" onclick="openform('Product 4')">Consult</a>
                             </div>
                         </div>
                     </div>
-                    <div class="boxContainer">
-                        <img src="picture/product/page3/wirem.png" alt="wa.jpg" srcset="">
+                    <div class="imgBox">
+                        <img class="img" src="picture/product/page3/wirem.png" alt="wa.jpg" srcset="">
                         <div class="box">
                             <h2>UNINYVIN BATTERY LINK:</h2>
                             <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
                             <div class="mineBox">
-                                
-                                <button id="ConsultBut" onclick="openform('Product 4')">Consult</button>
+                                <a href="form.html" style="text-decoration: none;"  id="ConsultBut" onclick="openform('Product 4')">Consult</a>
                             </div>
                         </div>
                     </div>
-                    <div class="boxContainer">
-                        <img src="picture/product/page3/wiren.png" alt="wa.jpg" srcset="">
+                    <div class="imgBox">
+                        <img class="img" src="picture/product/page3/wiren.png" alt="wa.jpg" srcset="">
                         <div class="box">
                             <h2>UNINYVIN LINK:</h2>
                             <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
                             <div class="mineBox">
-                                
-                                <button id="ConsultBut" onclick="openform('Product 4')">Consult</button>
+                                <a href="form.html" style="text-decoration: none;"  id="ConsultBut" onclick="openform('Product 4')">Consult</a>
                             </div>
                         </div>
                     </div>
-                    <div class="boxContainer">
-                        <img src="picture/product/page3/wiren.png" alt="wa.jpg" srcset="">
+                    <div class="imgBox">
+                        <img class="img" src="picture/product/page3/wiren.png" alt="wa.jpg" srcset="">
                         <div class="box">
                             <h2>UNINYVIN BATTERY NEGATIVE:</h2>
                             <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
                             <div class="mineBox">
-                                
-                                <button id="ConsultBut" onclick="openform('Product 4')">Consult</button>
+                                <a href="form.html" style="text-decoration: none;"  id="ConsultBut" onclick="openform('Product 4')">Consult</a>
                             </div>
                         </div>
                     </div>
-                    <div class="boxContainer">
-                        <img src="picture/product/page1/wireg.png" alt="wa.jpg" srcset="">
+                    <div class="imgBox">
+                        <img class="img" src="picture/product/page1/wireg.png" alt="wa.jpg" srcset="">
                         <div class="box">
                             <h2>LINK BATTERY CABLE:</h2>
                             <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
                             <div class="mineBox">
-                                
-                                <button id="ConsultBut" onclick="openform('Product 4')">Consult</button>
+                                <a href="form.html" style="text-decoration: none;"  id="ConsultBut" onclick="openform('Product 4')">Consult</a>
                             </div>
                         </div>
                     </div>
+                    <div class="imgBox">
+                        <img class="img" src="picture/product/page4/wirev.png" loading="lazy" alt="IMG">
+                        <p><strong>CABLE HARNESS WITHOUT COVER: </strong><br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde reiciendis quibusdam suscipit impedit nam. Deleniti quas totam, eum a, dolore dolorem accusantium quam repellat aperiam aliquam atque consectetur necessitatibus illum?</p>
+                        <div class="mineBox">
+                            <a href="form.html" style="text-decoration: none;"  id="ConsultBut" onclick="openform('Product 4')">Consult</a>
+                        </div>
+                    </div> 
                 </div>
-
                 <h2 style="margin-top: 10px;">Our other products</h2>
-                <div class="catagoryBox" style="margin-bottom: 10px;">
+                <div class="catagoryBox">
                     <div class="catagoryminBoxa">
                         <a href="pin.html" class="catagoryminBoxa">
-                        <img src="picture/imgj.jpg" class="catagoryImg" alt="catagoryImg" loading="lazy">
-                        <a href="pin.html" style="position: absolute;z-index: 1;text-decoration: none;color: white;">PINS</a>
-                    </a>
+                            <img src="picture/imgj.jpg" class="catagoryImg" alt="catagoryImg" loading="lazy">
+                            <a href="pin.html" style="position: absolute;z-index: 1;text-decoration: none;color: white;">PINS</a>
+                        </a>
                     </div>
                     <div class="catagoryminBoxa">
                         <a href="hardness.html" class="catagoryminBoxa">
@@ -791,11 +731,10 @@
                     </div>
                 </div>
             </main>
-        </div>
             <footer>
                 <div class="footerWorlda">
                     <div class="footerContainera">
-                        <h2>Connecting Cables</h2>
+                        <h1>Connecting Cables</h1>
                         <form class="inputBox">
                             <input type="email" class="inputEmail" placeholder="Enter your mail to stay updated" required>
                             <button type="submit" class="sendEmail">Send</button>
@@ -803,7 +742,7 @@
                         <div class="footerBxoa">
                               <a href="" class="footerIco">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M22.5 12.0613C22.5 6.26003 17.8013 1.56128 12 1.56128C6.19875 1.56128 1.5 6.26003 1.5 12.0613C1.5 17.3025 5.34125 21.6425 10.355 22.43V15.0888H7.695V12.0613h20.3638V9.75128C10.3638 7.11753 11.93 5.66503 14.3275 5.66503C15.4738 5.66503 16.6813 5.86628 16.6813 5.86628V8.44753h25.36C14.0563 8.44753 13.645 9.26128 13.645 10.0838V12.0613h26.5587L16.095 15.0975h23.645V22.4388C18.6588 21.6425 22.5 17.3025 22.5 12.0613Z" fill="white"></path>
+                                  <path d="M22.5 12.0613C22.5 6.26003 17.8013 1.56128 12 1.56128C6.19875 1.56128 1.5 6.26003 1.5 12.0613C1.5 17.3025 5.34125 21.6425 10.355 22.43V15.0888H7.695V12.0613H10.3638V9.75128C10.3638 7.11753 11.93 5.66503 14.3275 5.66503C15.4738 5.66503 16.6813 5.86628 16.6813 5.86628V8.44753H15.36C14.0563 8.44753 13.645 9.26128 13.645 10.0838V12.0613H16.5587L16.095 15.0975H13.645V22.4388C18.6588 21.6425 22.5 17.3025 22.5 12.0613Z" fill="white"></path>
                                 </svg>
                               </a>
                               <a href="" class="footerIco">
@@ -813,13 +752,13 @@
                               </a>
                               <a href="" class="footerIco">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M7 2h27C19.7614 2 22 4.23858 22 7V17C22 19.7614 19.7614 22 17 22H7C4.23858 22 2 19.7614 2 17V7C2 4.23858 4.23858 2 7 2ZM16.65 6.49999C16.65 6.03055 17.0306 5.64999 17.5 5.64999h27.51C17.9795 5.64999 18.36 6.03055 18.36 6.49999C18.36 6.96944 17.9795 7.34999 17.51 7.34999h27.5C17.0306 7.34999 16.65 6.96944 16.65 6.49999ZM12.5127 8.79134C11.8469 8.69261 11.1669 8.80633 10.5695 9.11633C9.97203 9.42633 9.48755 9.91682 9.18494 10.518C8.88233 11.1193 8.777 11.8006 8.88393 12.4651C8.99086 13.1296 9.30461 13.7435 9.78055 14.2195C10.2565 14.6954 10.8704 15.0092 11.5349 15.1161C12.1994 15.223 12.8808 15.1177 13.482 14.8151C14.0832 14.5125 14.5737 14.028 14.8837 13.4306C15.1937 12.8331 15.3074 12.1531 15.2087 11.4873C15.108 10.8082 14.7915 10.1795 14.306 9.69399C13.8206 9.20851 13.1918 8.89205 12.5127 8.79134ZM9.83255 7.69614C10.7287 7.23114 11.7487 7.06055 12.7474 7.20865C13.7661 7.35971 14.7092 7.8344 15.4374 8.56262C16.1656 9.29083 16.6403 10.2339 16.7914 11.2526C16.9395 12.2513 16.7689 13.2713 16.3039 14.1675C15.8389 15.0636 15.1031 15.7903 14.2013 16.2443C13.2995 16.6982 12.2775 16.8562 11.2807 16.6958C10.2839 16.5354 9.36308 16.0647 8.64918 15.3508C7.93527 14.6369 7.46465 13.7161 7.30425 12.7193C7.14386 11.7225 7.30185 10.7005 7.75576 9.7987C8.20968 8.89687 8.9364 8.16114 9.83255 7.69614Z" fill="white"></path>
+                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M7 2H17C19.7614 2 22 4.23858 22 7V17C22 19.7614 19.7614 22 17 22H7C4.23858 22 2 19.7614 2 17V7C2 4.23858 4.23858 2 7 2ZM16.65 6.49999C16.65 6.03055 17.0306 5.64999 17.5 5.64999H17.51C17.9795 5.64999 18.36 6.03055 18.36 6.49999C18.36 6.96944 17.9795 7.34999 17.51 7.34999H17.5C17.0306 7.34999 16.65 6.96944 16.65 6.49999ZM12.5127 8.79134C11.8469 8.69261 11.1669 8.80633 10.5695 9.11633C9.97203 9.42633 9.48755 9.91682 9.18494 10.518C8.88233 11.1193 8.777 11.8006 8.88393 12.4651C8.99086 13.1296 9.30461 13.7435 9.78055 14.2195C10.2565 14.6954 10.8704 15.0092 11.5349 15.1161C12.1994 15.223 12.8808 15.1177 13.482 14.8151C14.0832 14.5125 14.5737 14.028 14.8837 13.4306C15.1937 12.8331 15.3074 12.1531 15.2087 11.4873C15.108 10.8082 14.7915 10.1795 14.306 9.69399C13.8206 9.20851 13.1918 8.89205 12.5127 8.79134ZM9.83255 7.69614C10.7287 7.23114 11.7487 7.06055 12.7474 7.20865C13.7661 7.35971 14.7092 7.8344 15.4374 8.56262C16.1656 9.29083 16.6403 10.2339 16.7914 11.2526C16.9395 12.2513 16.7689 13.2713 16.3039 14.1675C15.8389 15.0636 15.1031 15.7903 14.2013 16.2443C13.2995 16.6982 12.2775 16.8562 11.2807 16.6958C10.2839 16.5354 9.36308 16.0647 8.64918 15.3508C7.93527 14.6369 7.46465 13.7161 7.30425 12.7193C7.14386 11.7225 7.30185 10.7005 7.75576 9.7987C8.20968 8.89687 8.9364 8.16114 9.83255 7.69614Z" fill="white"></path>
                                 </svg>
                               </a>
                               <a href="" class="footerIco">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <g clip-path="url(#clip0_1110_1425)">
-                                  <path d="M20.1909 2H3.80909C2.80909 2 2 2.80909 2 3.80909V20.1909C2 21.1909 2.80909 22 3.80909 22H20.1909C21.1909 22 22 21.1909 22 20.1909V3.80909C22 2.80909 21.1909 2 20.1909 2ZM8.19091 19.2727C8.19091 19.5636 7.95455 19.8 7.66364 19.8H5.41818C5.12727 19.8 4.89091 19.5636 4.89091 19.2727V9.87273C4.89091 9.58182 5.12727 9.34545 5.41818 9.34545H7.66364C7.95455 9.34545 8.19091 9.58182 8.19091 9.87273V19.2727ZM6.54545 8.46364C5.37273 8.46364 4.41818 7.50909 4.41818 6.33636C4.41818 5.16364 5.36364 4.2 6.54545 4.2C7.72727 4.2 8.67273 5.15455 8.67273 6.32727C8.67273 7.5 7.71818 8.46364 6.54545 8.46364ZM19.9 19.3091C19.9 19.5727 19.6818 19.7909 19.4182 19.7909h27.0091C16.7455 19.7909 16.5273 19.5727 16.5273 19.3091V14.9091C16.5273 14.2545 16.7182 12.0273 14.8091 12.0273C13.3273 12.0273 13.0273 13.5455 12.9636 14.2364V19.3182C12.9636 19.5818 12.7455 19.8 12.4818 19.8h20.1545C9.89091 19.8 9.67273 19.5818 9.67273 19.3182V9.83636C9.67273 9.57273 9.89091 9.35455 10.1545 9.35455h22.4818C12.7455 9.35455 12.9636 9.57273 12.9636 9.83636V10.6545C13.5091 9.82727 14.3273 9.19091 16.0727 9.19091C19.9273 9.19091 19.9 12.7909 19.9 14.7636V19.3091Z" fill="white"></path>
+                                  <path d="M20.1909 2H3.80909C2.80909 2 2 2.80909 2 3.80909V20.1909C2 21.1909 2.80909 22 3.80909 22H20.1909C21.1909 22 22 21.1909 22 20.1909V3.80909C22 2.80909 21.1909 2 20.1909 2ZM8.19091 19.2727C8.19091 19.5636 7.95455 19.8 7.66364 19.8H5.41818C5.12727 19.8 4.89091 19.5636 4.89091 19.2727V9.87273C4.89091 9.58182 5.12727 9.34545 5.41818 9.34545H7.66364C7.95455 9.34545 8.19091 9.58182 8.19091 9.87273V19.2727ZM6.54545 8.46364C5.37273 8.46364 4.41818 7.50909 4.41818 6.33636C4.41818 5.16364 5.36364 4.2 6.54545 4.2C7.72727 4.2 8.67273 5.15455 8.67273 6.32727C8.67273 7.5 7.71818 8.46364 6.54545 8.46364ZM19.9 19.3091C19.9 19.5727 19.6818 19.7909 19.4182 19.7909H17.0091C16.7455 19.7909 16.5273 19.5727 16.5273 19.3091V14.9091C16.5273 14.2545 16.7182 12.0273 14.8091 12.0273C13.3273 12.0273 13.0273 13.5455 12.9636 14.2364V19.3182C12.9636 19.5818 12.7455 19.8 12.4818 19.8H10.1545C9.89091 19.8 9.67273 19.5818 9.67273 19.3182V9.83636C9.67273 9.57273 9.89091 9.35455 10.1545 9.35455H12.4818C12.7455 9.35455 12.9636 9.57273 12.9636 9.83636V10.6545C13.5091 9.82727 14.3273 9.19091 16.0727 9.19091C19.9273 9.19091 19.9 12.7909 19.9 14.7636V19.3091Z" fill="white"></path>
                                   </g>
                                   <defs>
                                   <clipPath id="clip0_1110_1425">
