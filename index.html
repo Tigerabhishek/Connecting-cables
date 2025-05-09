@@ -8,7 +8,7 @@
 	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap">
 	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap">
 	<script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
     <meta name="description" content="Welcome to Connecting CablesWe have been in the wiring harness space for over three years.
     We have been in the wiring harness space for over three years. We started with TML Indica & CV wiring harness as a job work with TATA YAZAKI and have been appreciated by them. The credentials can be seen below.">
     <meta name="keywords" content="connecting cables, wiring harness, pins, battery cable, harness">
@@ -227,6 +227,35 @@
             cursor: pointer;
             transition: 1s;
             flex: 100;
+            animation: imgAppear linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 20%;
+        }
+        @keyframes imgAppear {
+            from {
+                opacity: 0;
+                scale: 0.5;
+            }
+            to{
+                opacity: 1;
+                scale: 1;
+            }
+        }
+        .homeTextcontent
+        {
+            animation: textAppear linear;
+            animation-range: entry 0% cover 20%;
+            animation-timeline: view();
+        }
+        @keyframes textAppear {
+            from {
+                opacity: o;
+                scale: 0.5;
+            }
+            to{
+                opacity: 1;
+                scale: 1;
+            }
         }
         footer
         {
@@ -414,11 +443,25 @@
             color: white;
             position: relative;
             overflow: hidden;
-            transition: 1s;
+            animation: catAppear linear;
+            animation-range: entry 0% cover 20%;
+            animation-timeline: view();
+        }
+        @keyframes catAppear {
+            from {
+                /* opacity: o;
+                scale: 0.5; */
+                transform: translateX(-100%);
+            }
+            to{
+                /* opacity: 1;
+                scale: 1; */
+                transform: translateX(-10%);
+            }
         }
         .catagoryImg
         {
-            object-fit: contain;
+            object-fit: cover;
             height: 100%;
             width: 100%;
             box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
@@ -608,7 +651,7 @@
                 <div class="mainContainera">
                     <h1 class="mainH1">Welcome to Connecting Cables</h1>
                     <h2>We have been in the wiring harness space for over three years.</h2>
-                    <p style="font-size: 18px;">
+                    <p style="font-size: 18px;" class="homeTextcontent">
                         We have been in the wiring harness space for over three years.
                         We started with TML Indica & CV wiring harness as a job work with TATA YAZAKI and have been appreciated by them. The credentials can be seen below.</p>
                 </div>
@@ -631,7 +674,7 @@
                     </div>
                 </div>
                 <div class="mainContainera">
-                    <p style="font-size: 18px;">Currently we are assembling wiring harness for TATA YAZAKI NANO CAR as is clear from the photo gallery .<br><br>An ISO certified company ,we are a focused and progressive organization providing our customers with delight based on quality and timely delivery.<br><br>We have our exclusive premises in GIDC Gandhinagar, Capital of Gujarat with its excellent road and rail network, an excellent logistics support as well as adequate space for storage of items before and after assembly.<br><br>As a progressive company we target, in the future, wiring harnesses of entire cross section of vehicles both passenger cars as well as commercial vehicles .<br><br>Also wiring harnesses for white goods, medical diagnostics equipment, Electrical and electronics equipment.</p>
+                    <p style="font-size: 18px;" class="homeTextcontent">Currently we are assembling wiring harness for TATA YAZAKI NANO CAR as is clear from the photo gallery .<br><br>An ISO certified company ,we are a focused and progressive organization providing our customers with delight based on quality and timely delivery.<br><br>We have our exclusive premises in GIDC Gandhinagar, Capital of Gujarat with its excellent road and rail network, an excellent logistics support as well as adequate space for storage of items before and after assembly.<br><br>As a progressive company we target, in the future, wiring harnesses of entire cross section of vehicles both passenger cars as well as commercial vehicles .<br><br>Also wiring harnesses for white goods, medical diagnostics equipment, Electrical and electronics equipment.</p>
                 </div>
             </div>
             <div class="catagoryContainer" id="products">
