@@ -111,20 +111,15 @@
         {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            padding: 10px;
-            width: calc(100% - 20px);
+            width: 100%;
+            flex-direction: column;
+            gap: 10px;
             min-height: 30px;
             height: max-content;
             position: fixed;
             top: 0;
-            border-bottom-right-radius: 20px;
-            border-bottom-left-radius: 20px;
-            box-shadow: 0px 10px 15px rgba(0,0,0,0.2);
             z-index: 2;
-            /* background: linear-gradient(89.9deg, #45b474 .53%, #00afef 99.92%); */
-            background-color: #007bff;
+            background-color: white;
         }
         nav 
         {
@@ -588,6 +583,62 @@
                transform: rotateY(490deg);
             }
         }
+        .animeContainer
+        {
+            height: 30px;
+            width: 99%;
+            background-color: ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .aniBoxa
+        {
+            width: 90%;
+            height: 20px;
+            background-color: #007bff;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            position: absolute;
+        }
+        .aniBoxa.show{
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* @keyframes boxa {
+            from {
+                scale: 0.5;
+                opacity: 0;
+            }
+            to{
+                scale: 1;
+                opacity: 1;
+            }
+        }
+        .aniBoxb
+        {
+            width: 50%;
+            height: 20px;
+            background-color: #003874;
+            animation: boxb ease-in-out;
+            animation-range: entry 0% cover 1 0%;
+            animation-timeline: view();
+            transition: 1s;
+            position: absolute;
+        }
+        @keyframes boxb {
+            from {
+                transform: translateX(-429%);
+                opacity: 0;
+            }
+            to{
+                transform: translateX(-10%);
+                opacity: 1;
+            }
+        } */
         @media (max-width: 875px) {
             .tigerWorld
             {
@@ -662,9 +713,9 @@
     </style>
 </head>
 <body>
-    <div class="connectMove">
+    <!-- <div class="connectMove">
         <img src="picture/cablelogo2.png" style="object-fit: cover;"  alt="" srcset="">
-    </div>
+    </div> -->
     <div class="loaderWorld" id="loader">
         <div class="loaderContainer">
             <div class="loaderElementa"></div>
@@ -675,27 +726,40 @@
     </div>
     <div class="mainWorld" id="mainworld">
         <header>
-        <h1 style="color: white;">Connecting Cables</h1>
-        <nav>
-            <div class="navBox">
-                 <a href="index.html" class="navBut">Home</a>
+            <div style="display: flex;flex-wrap: wrap; align-items: center;justify-content: space-between;position: relative;width: 100%;border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            box-shadow: 0px 10px 15px rgba(0,0,0,0.2);
+            background-color: #007bff;padding: 10px;">
+                <h1 style="color: white; margin-left: 10px;">Connecting Cables</h1>
+            <nav style="margin-right: 10px;">
+                <div class="navBox">
+                     <a href="index.html" class="navBut">Home</a>
+                </div>
+                <div class="navBox">
+                    <a href="aboutus.html" class="navBut">About Us</a>
+                </div>
+                <div class="navBox">
+                    <a href="#products" class="navBut">Product</a>
+                </div>
+                <div class="navBox">
+                    <a href="imagegallery.html" class="navBut">Image Gallery</a>
+                </div>
+                <div class="navBox">
+                    <a href="management.html" class="navBut">Management Team</a>
+                </div>
+            </nav>
             </div>
-            <div class="navBox">
-                <a href="aboutus.html" class="navBut">About Us</a>
-	        </div>
-            <div class="navBox">
-                <a href="#products" class="navBut">Product</a>
+            <div class="animeContainer">
+                <div class="aniBoxa"></div>
+                <div class="aniBoxa" style="background-color: red"></div>
+                <div class="aniBoxa" style="background-color: yellow"></div>
+                <div class="aniBoxa" style="background-color: pink"></div>
+                <div class="aniBoxa" style="background-color: brown"></div>
             </div>
-            <div class="navBox">
-                <a href="imagegallery.html" class="navBut">Image Gallery</a>
-	        </div>
-            <div class="navBox">
-                <a href="management.html" class="navBut">Management Team</a>
-            </div>
-        </nav>
     </header>
     <main>
         <div class="tigerWorld">
+            
             <div class="mainWorlda">
                 <div class="mainContainera">
                     <h1 class="mainH1">Welcome to Connecting Cables</h1>
@@ -917,6 +981,25 @@ emailjs.send('service_5fp5h83', 'template_s60xjkb', templateParams).then(
   },
 );
         }
+
+        const aniBoxa = document.querySelectorAll('.aniBoxa');
+let currentIndex = 0;
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    // If user scrolled more than 150px from last box reveal
+    if (Math.abs(currentScrollY - lastScrollY) > 150) {
+        if (currentIndex < aniBoxa.length) {
+            aniBoxa[currentIndex].classList.add('show');
+            currentIndex++;
+            lastScrollY = currentScrollY;
+        }
+    }
+});
+
+
     </script>
 </body>
 </html>
