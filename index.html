@@ -990,7 +990,7 @@ window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
 
     // If user scrolled more than 150px from last box reveal
-    if (Math.abs(currentScrollY - lastScrollY) > 150) {
+    if (Math.abs(currentScrollY - lastScrollY) > 250) {
         if (currentIndex < aniBoxa.length) {
             aniBoxa[currentIndex].classList.add('show');
             currentIndex++;
